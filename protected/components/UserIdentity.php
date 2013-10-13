@@ -7,11 +7,11 @@ class UserIdentity extends CUserIdentity
  
     public function authenticate()
     {
-		  $username=strtolower($this->username);
+	$username=strtolower($this->username);
         $record=User::model()->find('LOWER(username)=?',array($username));
         if($record===null)
             $this->errorCode=self::ERROR_USERNAME_INVALID;
-        else if($record->validatePassword($this->password))
+        else if(!$record->validatePassword($this->password))
             $this->errorCode=self::ERROR_PASSWORD_INVALID;
         else
         {
