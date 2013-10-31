@@ -14,7 +14,7 @@ class WebUser extends CWebUser
             // Not identified => no rights
             return false;
         }
-      /* Multiple roles based on http://www.yiiframework.com/wiki/328/simple-rbac/#c10792  
+      // Multiple roles based on http://www.yiiframework.com/wiki/328/simple-rbac/#c10792  
 		  $roles = explode(',', $this->getState("roles"));
  
 		  if (in_array('admin', $roles) || in_array($operation, $roles))
